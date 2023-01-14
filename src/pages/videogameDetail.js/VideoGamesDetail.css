@@ -1,0 +1,114 @@
+.divGeneralDetail {
+    display: flex;
+    flex-direction: column;
+    min-height: 1vh;
+    height: fit-content;
+    width: 100vw;
+    background-color: #121212;
+
+}
+.botonesDetails{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.divDescripcionBtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.divGeneralDetail .navDetail {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    background-color: #212121;
+
+}
+.divGeneralDetail .navDetail > button{
+   height: 2.5rem;
+   width: 5rem;
+   margin-left: 15px;
+   border-radius: 10px;
+   background-color: #212121;
+   color: #FCF9BF;
+    border: 1px solid #FCF9BF;
+    letter-spacing: 2px;
+   ;
+}
+.divGeneralDetail .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.divGeneralDetail .containerDetail {
+    display: flex;
+    flex-direction: column;
+    min-height: 1vh;
+    height: fit-content;
+    justify-content: space-around;
+    align-items: center;
+    color: #FCF9BF;
+    margin-bottom: 3rem;
+    
+}
+.divGeneralDetail .containerDetail .details{
+    border: 1px solid  #FCF9BF;
+    border-radius: 10px;
+    display: flex;
+    margin-left: 3rem;
+    margin-right: 3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.divGeneralDetail .containerDetail .details div{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.divGeneralDetail .containerDetail .info{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.fondo {
+    display: flex;
+    background-color: #707D9D;
+    height: 30rem;
+    width: 40rem;
+}
+.divGeneralDetail .navDetail > button:hover{
+    background-color: #FCF9BF;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+}
+
+
+
+
+
+.eliminar {
+    width: 100%;
+    height: 100%;
+    background-color: #212121;
+    border: 1px solid #FCF9BF;
+    color: #FCF9BF;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.eliminar:hover {
+    background-color: #FCF9BF;
+    border: 1px solid #212121;
+    color: #212121;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+  

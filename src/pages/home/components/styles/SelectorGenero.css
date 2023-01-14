@@ -1,0 +1,16 @@
+.select {
+    height: 2.5rem;
+    border-radius: 10px;
+    margin-right: 10px;
+    background-color: inherit;
+    color: white;
+}
+.select:hover{
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+}
+.h1 {
+    font-size: medium;
+}

@@ -1,0 +1,70 @@
+.div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.div .divSearch {
+    margin-right: 130px;
+}
+.icono{
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.icono:hover{
+    cursor: pointer;
+}
+.div .divSearch > input {
+    text-align: center;
+    background-color: #121212;
+    border: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 30rem;
+    color: white;
+}
+.div .divSearch > input:hover {
+    transition: 0.5s;
+    background-color: white;
+    border: 0px;
+    margin-right: 10px;
+    border-radius: 10px;
+    height: 2.5rem;
+    width: 30rem;
+    color: #121212;
+}
+.btnSearch{
+    height: 2.7rem;
+    width: 5rem;
+    border-radius: 10px;
+    background-color:#212121;
+    color: #FCF9BF;
+    border: 1px solid #FCF9BF;
+    letter-spacing: 2px;
+}
+.div .divCreate {
+    margin-right: 15px;
+}
+.div .divSelector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.btnSearch, .div > div > button {
+    height: 2.7rem;
+    width: 5rem;
+    border-radius: 10px;
+    background-color:#212121;
+    color: #FCF9BF;
+    border: 1px solid #FCF9BF;
+    letter-spacing: 2px;
+}
+.btnSearch:hover,  .div > div > button:hover{
+    border: 1px solid #212121;
+    color: #212121;
+    background-color: #FCF9BF;
+    cursor: pointer;
+}
