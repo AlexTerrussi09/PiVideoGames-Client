@@ -26,6 +26,7 @@ const SelectorGenero = ({setCargando}) => {
 
     useEffect(() => {
         dispatch(getAllGenresApi())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
 
@@ -33,9 +34,9 @@ const SelectorGenero = ({setCargando}) => {
     <>
     <select className="select" onChange={filtrarGenero}>
                 <option value={'All'}>Genre</option>
-        {Generos.map((g, index)=> {
+        {Generos.map((g)=> {
             return (
-                <option key={index} value={g.name}>{g.name}</option>
+                <option key={g.id} value={g.name}>{g.name}</option>
             )
         })}
     </select>

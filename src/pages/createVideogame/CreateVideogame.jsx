@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { postVideogameDb } from '../../redux/Actions';
-import SelectorGenero from '../home/components/SelectorGenero';
 import SelectGenres from './components/SelectGenres';
 import SelectorPlataformas from './components/SelectorPlataformas';
 import './CreateVideogame.css'
@@ -53,7 +52,6 @@ const handleRating = (e) => {
 };
 const crearVideojuego = async(e) => {
   e.preventDefault();
-  console.log(Form)
   let juego = await dispatch(postVideogameDb({...Form, genres : Generos, platforms : Plataformas}))
   if (juego) {
     reset()

@@ -1,21 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { actualizarVideogame, deleteVideogame, getVideogameDetail, resetVgDetail } from '../../redux/Actions'
+import {  deleteVideogame, getVideogameDetail, resetVgDetail } from '../../redux/Actions'
 import LoadingComponent from '../loading/LoadingComponent'
 import './VideoGamesDetail.css'
-import SelectorPlataformas from '../createVideogame/components/SelectorPlataformas'
-import SelectGenres from '../createVideogame/components/SelectGenres'
 
  const VideoGameDetail = (props) => {
   const history = useHistory()
   const dispatch = useDispatch()
   const Videogame = useSelector(state => state.videogameDetail)
   const [Cargando, setCargando] = useState(true);
-  const [Plataformas, setPlataformas] = useState([]);
-  const [Genres, setGeneros] = useState([])
-  const [Error, setError] = useState("")
-  const [Form, setForm] = useState({})
   ;
   const idVideogame = props.match.params.id
   const irAtras = () =>{
@@ -23,18 +17,8 @@ import SelectGenres from '../createVideogame/components/SelectGenres'
     history.push('/videogames')
   }
   const Cargado = () => {
-    console.log(Videogame)
     setTimeout(()=>{
       setCargando(false)
-      setForm({
-        name : Videogame.name,
-        description : Videogame.description,
-        Plataformas: Videogame.Plataformas, 
-        background_image : Videogame.background_image,
-        rating: Videogame.rating,
-        Generos : Videogame.Generos,
-        releaseDate : Videogame.releaseDate
-      })
     },1000)
   }
   
@@ -45,50 +29,10 @@ import SelectGenres from '../createVideogame/components/SelectGenres'
    }
    
   }
-  const eliminarPlataforma = (p) => {
-    setPlataformas(Plataformas.filter(pl => pl !== p))
-  }
-  const eliminarGenero = (g) => {
-    setGeneros(Genres.filter(gn => gn !== g))
-  }
-  const handleName = (e) => {
-    setForm({ ...Form, name: e.target.value })
-  };
-  const handleDescription = (e) => {
-    setForm({ ...Form, description: e.target.value })
-  };
-  const handleDate = (e) => {
-  let date = new Date(e.target.value)
-  setForm({ ...Form, releaseDate: date.toLocaleDateString() })
-  };
-  const handleImg = (e) => {
-    setForm({ ...Form, background_image: e.target.value })
-  };
-  const handleRating = (e) => {
-    let puntuacion  = e.target.value
-    if ( (puntuacion && puntuacion > 5) ||( puntuacion && puntuacion < 1)) {
-      setError("El Rating tiene que ser un valor entre 1 y 5")
-    } else {
-      setForm({ ...Form, rating: e.target.value })
-      setError("")
-    }
-  };
-  const editarVideogame = (e) => {
-    console.log(Form)
-    e.preventDefault();
-  let gens = Genres? setForm({ ...Form, Generos: Genres }) : setForm({ ...Form, Generos: Videogame.Generos }) 
-  let pla = Plataformas? setForm({ ...Form, Plataformas: Plataformas }) : setForm({ ...Form, Plataformas: Videogame.Plataformas }) 
-  let juego = dispatch(actualizarVideogame({...Form, Generos : gens, Plataformas : pla}))
-  if (juego) {
-    alert("Videojuego Actualizado correctamente")
-  } else {
-    alert("Error al actualizar el videojuego")
-  }
-  }
   useEffect(() => {
   dispatch(getVideogameDetail(idVideogame))
   Cargado()
-  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   return (

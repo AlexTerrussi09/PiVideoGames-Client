@@ -15,9 +15,8 @@ export const FILTER = "FILTER";
 
  export const getAllVideogamesDb = () => {
     return async dispatch => {
-        const result = await fetch(`http://localhost:3001/videogames`, {method: 'GET', headers: {'Content-Type':'application/json'}})
+        const result = await fetch("http://localhost:3001/videogames", {method: 'GET', headers: {'Content-Type':'application/json'}})
         const data = await result.json()
-        console.log(data)
         return dispatch({
             type : GET_ALL_VIDEOGAMES,
             payload: data
@@ -45,19 +44,13 @@ export const postVideogameDb = (obj) => {
 }
 
  export const buscarJuegos = (query) => {
-    try {
-        
         return async dispatch => {
             const result = await fetch(`http://localhost:3001/videogames?name=${query}`)
             const data = await result.json();
-            console.log(result)
             return dispatch({
                 type: SEARCH_VIDEOGAMES, payload: data 
             })
         }
-    } catch (error) {
-        return false
-    }
 }
 export const resetVgDetail = () => (dispatch) => {
     return dispatch({ type: CLEAR_VIDEOGAME, payload: {} })
@@ -66,7 +59,6 @@ export const resetVgDetail = () => (dispatch) => {
     return async dispatch => {
         const result = await fetch(`http://localhost:3001/genres`)
         const data = await result.json()
-        console.log(data)
         return dispatch({
             type : GET_ALL_GENRES,
             payload: data
@@ -77,7 +69,6 @@ export const resetVgDetail = () => (dispatch) => {
     return async dispatch => {
         const result = await fetch(`http://localhost:3001/platforms`)
         const data = await result.json()
-        console.log(data)
         return dispatch({
             type : GET_ALL_PLATFORMS,
             payload: data
@@ -121,7 +112,6 @@ export const deleteVideogame = (id)  => {
     }
 }
 export const actualizarVideogame = (obj) => {
-    console.log(obj)
     return async dispatch => {
         let url ='http://localhost:3001/videogames';
         let method = 'PUT';

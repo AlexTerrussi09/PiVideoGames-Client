@@ -11,13 +11,13 @@ const SelectorPlataformas = ({setPlataformas, Plats}) => {
       if (Plats.includes(e.target.value)) {
         return alert(`Plataforma ${e.target.value} ya agregada!`)
       } else {
-        console.log(Plats)
       setPlataformas([...Plats, e.target.value] )
       }
       
     }
     useEffect(() => {
         dispatch(getAllPlatformsApi())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
   return (

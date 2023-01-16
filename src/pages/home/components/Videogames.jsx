@@ -7,9 +7,8 @@ import './styles/Home.css'
 import LoadingComponent from '../../loading/LoadingComponent';
 
 const Videogames = props => {
-    const {videogames, genres} = useSelector(state => state);
+    const {videogames} = useSelector(state => state);
     const [Cargando, setCargando] = useState(true)
-    const [Actual, setActual] = useState(1)
 
 
     const [CurrentPage, setCurrentPage] = useState(1);

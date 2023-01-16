@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { buscarJuegos, getAllVideogamesDb } from '../../../redux/Actions';
+import { buscarJuegos } from '../../../redux/Actions';
 import './styles/SearchBar.css'
 import SelectorGenero from './SelectorGenero';
 import SelectorOrden from './SelectorOrden';
@@ -24,7 +24,6 @@ const SearchBar = ({setCargando}) => {
   const Buscar =  (e) => {
     e.preventDefault()
     setCargando(true)
-    console.log(Busqueda)
     let buscar = dispatch(buscarJuegos(Busqueda))
     if (!buscar) {
       setCargando(false)
@@ -37,7 +36,7 @@ const SearchBar = ({setCargando}) => {
     <>
         <div className='div'>
           <div className='divSelector'>
-          <img onClick={()=>irLogin()} className='icono' src='https://http2.mlstatic.com/storage/mshops-appearance-api/images/15/254304515/logo-2020060212005277900.png' width={"40rem"} height={"40rem"}/>
+          <img onClick={()=>irLogin()} className='icono' src='https://http2.mlstatic.com/storage/mshops-appearance-api/images/15/254304515/logo-2020060212005277900.png' width={"40rem"} height={"40rem"} alt="not found"/>
             <SelectorGenero setCargando={setCargando}/>
             <SelectorOrden setCargando={setCargando}/>
           </div>

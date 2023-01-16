@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import './styles/Pagination.css'
 
 const Pagination = ({ totalPosts, postPerPage, setCurrentPage, currentPage }) => {

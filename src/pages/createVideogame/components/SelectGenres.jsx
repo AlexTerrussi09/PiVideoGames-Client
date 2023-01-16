@@ -10,13 +10,13 @@ const SelectGenres = ({Gens, setGeneros}) => {
         if (Gens.includes(e.target.value)) {
             return alert(`Genero ${e.target.value} ya agregado!`)
         } else {
-            console.log(Gens)
             setGeneros([...Gens, e.target.value] )
         }
       }
 
     useEffect(() => {
         dispatch(getAllGenresApi())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
 

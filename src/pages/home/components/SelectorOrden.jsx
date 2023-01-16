@@ -13,7 +13,7 @@ const SelectorOrden = ({setCargando}) => {
                 if(a.name > b.name) { return 1; }
                 return 0;
             })
-            dispatch(filtrar(arr))
+            return dispatch(filtrar(arr))
         } else if (e.target.value === "ZA") {
             let arr = Videogames.sort((a, b) => {
                 if(a.name > b.name) { return -1; }
