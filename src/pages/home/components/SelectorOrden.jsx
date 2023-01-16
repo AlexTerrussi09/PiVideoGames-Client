@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { filtrar, getAllVideogamesDb } from '../../../redux/Actions';
 import './styles/SelectorOrden.css'
@@ -36,18 +36,18 @@ const SelectorOrden = ({setCargando}) => {
             })
             dispatch(filtrar(arr))
         } else if(e.target.value === "API"){
-            dispatch(filtrar(Videogames.filter(game => {
-                if (typeof(game.id) === 'number') return game
-        })))
+            dispatch(filtrar(Videogames.filter(game =>  typeof(game.id) === 'number').map(g=>g)))
         } else if(e.target.value === "DB"){
-            dispatch(filtrar(Videogames.filter(game => {
-                if (String(Number(game.id)) === 'NaN') return game
-        })))
+            dispatch(filtrar(Videogames.filter(game => String(Number(game.id)) === 'NaN').map(g=>g)))
         } else if (e.target.value === "EMPTY") {
             dispatch(getAllVideogamesDb())
             setCargando(true)
         }
     } 
+    useEffect(() => {
+        dispatch(getAllVideogamesDb())
+    }, [dispatch])
+    
   return (
     <>
      <select className="select" onChange={CambiatFiltro}>

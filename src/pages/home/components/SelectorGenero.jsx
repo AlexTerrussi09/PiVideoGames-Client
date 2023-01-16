@@ -17,9 +17,7 @@ const SelectorGenero = ({setCargando}) => {
             dispatch(getAllVideogamesDb())
             setCargando(true)
         } else {
-            dispatch(filtrar(Videogames.filter(game => {
-                    if (game.Generos.includes(e.target.value)) return game
-            })))
+            dispatch(filtrar(Videogames.filter(game => game.Generos.includes(e.target.value)).map(g=>g)))
             setCargando(true)
         }
     }
