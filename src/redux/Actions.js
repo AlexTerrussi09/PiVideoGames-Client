@@ -10,12 +10,13 @@ export const GET_ALL_PLATFORMS = "GET_ALL_PLATFORMS";
 export const UPDATE_VIDEOGAME = "UPDATE_VIDEOGAME";
 
 export const FILTER = "FILTER";
+const URL_SERVER = process.env.REACT_APP_URL_SERVER || "http://localhost:3001/";
 
 
 
  export const getAllVideogamesDb = () => {
     return async dispatch => {
-        const result = await fetch("http://localhost:3001/videogames", {method: 'GET', headers: {'Content-Type':'application/json'}})
+        const result = await fetch(`${URL_SERVER}videogames`, {method: 'GET', headers: {'Content-Type':'application/json'}})
         const data = await result.json()
         return dispatch({
             type : GET_ALL_VIDEOGAMES,
@@ -25,7 +26,7 @@ export const FILTER = "FILTER";
 };
 export const postVideogameDb = (obj) => {
   return async dispatch => {
-      let url ='http://localhost:3001/videogames';
+      let url =`${URL_SERVER}videogames`;
       let method = 'POST';
       let body = JSON.stringify(obj);
       let headers = {'Content-Type':'application/json'}
@@ -45,7 +46,7 @@ export const postVideogameDb = (obj) => {
 
  export const buscarJuegos = (query) => {
         return async dispatch => {
-            const result = await fetch(`http://localhost:3001/videogames?name=${query}`)
+            const result = await fetch(`${URL_SERVER}videogames?name=${query}`)
             const data = await result.json();
             return dispatch({
                 type: SEARCH_VIDEOGAMES, payload: data 
@@ -57,7 +58,7 @@ export const resetVgDetail = () => (dispatch) => {
 }
  export const getAllGenresApi = () => {
     return async dispatch => {
-        const result = await fetch(`http://localhost:3001/genres`)
+        const result = await fetch(`${URL_SERVER}genres`)
         const data = await result.json()
         return dispatch({
             type : GET_ALL_GENRES,
@@ -67,7 +68,7 @@ export const resetVgDetail = () => (dispatch) => {
  };
  export const getAllPlatformsApi = () => {
     return async dispatch => {
-        const result = await fetch(`http://localhost:3001/platforms`)
+        const result = await fetch(`${URL_SERVER}platforms`)
         const data = await result.json()
         return dispatch({
             type : GET_ALL_PLATFORMS,
@@ -75,20 +76,10 @@ export const resetVgDetail = () => (dispatch) => {
         })
     }
  };
- export const getGenresApiById = (id) => {
-    return async dispatch => {
-        const result = await fetch(`https://api.rawg.io/api/genres/${id}?key=297f465f508b4098a4f70fb6c6c038e3`)
-        const data = await result.json()
-        return dispatch({
-            type : GET_GENRES_DETAILS,
-            payload: data
-        })
-    }
- };
 
   export const getVideogameDetail = (id) => {
     return async dispatch => {
-        const result = await fetch(`http://localhost:3001/videogames/${id}`)
+        const result = await fetch(`${URL_SERVER}videogames/${id}`)
         const data = await result.json()
         return dispatch({
             type : GET_VIDEOGAME_DETAILS,
@@ -103,7 +94,7 @@ export const resetVgDetail = () => (dispatch) => {
 }
 export const deleteVideogame = (id)  => {
     return async dispatch => {
-      let url =`http://localhost:3001/videogames/${id}`;
+      let url =`${URL_SERVER}videogames/${id}`;
       let method = 'DELETE';
       let headers = {'Content-Type':'application/json'}
       let result = await fetch(url, {method, headers})
@@ -113,7 +104,7 @@ export const deleteVideogame = (id)  => {
 }
 export const actualizarVideogame = (obj) => {
     return async dispatch => {
-        let url ='http://localhost:3001/videogames';
+        let url =`${URL_SERVER}videogames`;
         let method = 'PUT';
         let body = JSON.stringify(obj);
         let headers = {'Content-Type':'application/json'}

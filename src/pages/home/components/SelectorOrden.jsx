@@ -45,8 +45,7 @@ const SelectorOrden = ({setCargando}) => {
         }
     } 
     useEffect(() => {
-        dispatch(getAllVideogamesDb())
-    }, [dispatch])
+    }, [])
     
   return (
     <>
