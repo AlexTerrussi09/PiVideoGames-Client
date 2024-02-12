@@ -5,19 +5,19 @@ import './styles/SelectorGenero.css'
 
 
 
-const SelectorGenero = ({setCargando}) => {
+const SelectorGenero = ({ setCargando }) => {
     const dispatch = useDispatch();
     const Generos = useSelector(state => state.genres)
     const Videogames = useSelector(state => state.videogames)
 
 
-    
+
     const filtrarGenero = (e) => {
         if (e.target.value === "All") {
             dispatch(getAllVideogamesDb())
             setCargando(true)
         } else {
-            dispatch(filtrar(Videogames.filter(game => game.Generos.includes(e.target.value)).map(g=>g)))
+            dispatch(filtrar(Videogames.filter(game => game.Generos.includes(e.target.value)).map(g => g)))
             setCargando(true)
         }
     }
@@ -26,19 +26,17 @@ const SelectorGenero = ({setCargando}) => {
         dispatch(getAllGenresApi())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-    
 
-  return (
-    <>
-    <select className="select" onChange={filtrarGenero}>
+
+    return (
+            <select className="select" onChange={filtrarGenero}>
                 <option value={'All'}>Genre</option>
-        {Generos.map((g)=> {
-            return (
-                <option key={g.id} value={g.name}>{g.name}</option>
-            )
-        })}
-    </select>
-    </>
-  )
+                {Generos.map((g) => {
+                    return (
+                        <option key={g.id} value={g.name}>{g.name}</option>
+                    )
+                })}
+            </select>
+    )
 }
 export default SelectorGenero

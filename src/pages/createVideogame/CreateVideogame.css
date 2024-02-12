@@ -1,4 +1,4 @@
-.divGeneral{
+.divGeneral {
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -6,6 +6,7 @@
     background-image: url(https://img.freepik.com/vector-gratis/controles-videojuegos-estilo-neon-pared-ladrillo_24908-58916.jpg?w=826&t=st=1668222838~exp=1668223438~hmac=23f5c14bc3541cd372fb9fde57aa110768577469186f6de2e8c7d4d4e0772779);
     background-size: 100%;
 }
+
 .divGeneral .divG1 .navCreate {
     display: flex;
     align-items: center;
@@ -14,28 +15,32 @@
     height: 4rem;
 
 }
-.divGeneral .navCreate > button{
-   height: 2.5rem;
-   width: 5rem;
-   margin-left: 15px;
-   border-radius: 10px;
-   background-color: #212121;
-   color: #FCF9BF;
+
+.divGeneral .navCreate>button {
+    height: 2.5rem;
+    width: 5rem;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: #212121;
+    color: #FCF9BF;
     border: 1px solid #FCF9BF;
     letter-spacing: 2px;
-   ;
+    ;
 }
+
 .span {
     color: red;
     font-size: 15px;
     margin-top: 10px;
 }
+
 .divGeneral .divG2 {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
 }
+
 .divGeneral .divG2 .createDiv {
     display: flex;
     flex-direction: column;
@@ -46,6 +51,7 @@
     border-radius: 10px;
     margin-bottom: 4rem;
 }
+
 .divGeneral .createDiv form {
     display: flex;
     flex-direction: column;
@@ -55,25 +61,32 @@
     height: auto;
     margin-bottom: 2rem;
 }
+
 .divGeneral .createDiv form .div1 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     width: 70%;
 }
-.divGeneral .divG2 .createDiv form .div1 label, input, textarea {
+
+.divGeneral .divG2 .createDiv form .div1 label,
+input,
+textarea {
     width: 100%;
 }
+
 .divGeneral .createDiv form .div2 {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .divGeneral .createDiv form div input {
     height: 2rem;
     border-radius: 8px;
     margin-top: 1rem;
 }
+
 .divGeneral .createDiv form div textarea {
     height: 2rem;
     border-radius: 8px;
@@ -81,16 +94,19 @@
     max-width: inherit;
     max-height: fit-content;
 }
+
 .divGeneral .createDiv form div textarea:focus {
     height: 4rem;
     width: 20rem;
 }
+
 .divGeneral .createDiv form div label {
     height: 2rem;
     border-radius: 8px;
     margin-top: 1rem;
     color: #FCF9BF;
 }
+
 .createDiv button {
     height: 3rem;
     width: 12rem;
@@ -102,18 +118,22 @@
     letter-spacing: 2px;
     margin-top: 1rem;
 }
-.createDiv button:hover, .navCreate > button:hover {
+
+.createDiv button:hover,
+.navCreate>button:hover {
     border: 1px solid black;
     cursor: pointer;
     color: black;
     background-color: #FCF9BF;
 }
+
 .createDiv button:disabled {
     border: 1px solid grey;
     cursor: not-allowed;
     color: grey;
     background-color: #212121;
 }
+
 .divG2 .createDiv .div1 .div2 .box {
     width: 20rem;
     height: auto;
@@ -123,6 +143,7 @@
     border: 1px solid black;
     margin-top: 1rem;
 }
+
 .divG2 .createDiv .div1 .div2 .box .span {
     display: inline-block;
     align-items: center;
@@ -135,6 +156,7 @@
     margin-bottom: 1rem;
     font-weight: bold;
 }
-.divG2 .createDiv .div1 .div2 .box .span:hover{
+
+.divG2 .createDiv .div1 .div2 .box .span:hover {
     cursor: pointer;
 }

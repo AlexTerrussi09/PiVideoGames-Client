@@ -5,12 +5,14 @@
     background-color: inherit;
     color: white;
 }
-.select:hover{
+
+.select:hover {
     transition: 0.5s;
     cursor: pointer;
     background-color: white;
     color: black;
 }
+
 .h1 {
     font-size: medium;
 }

@@ -13,15 +13,15 @@ function App() {
   useEffect(() => {
     dispatch(getAllGenresApi())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-}, [])
+  }, [])
   return (
     <div className='App-header'>
-        <Switch>
-          <Route exact path='/' component={Login}/>
-          <Route exact path='/videogames' component={Home}/>
-          <Route path='/videogames/create' component={CreateVideogame}/>
-          <Route path='/videogames/:id' component={VideoGameDetail}/>
-        </Switch>
+      <Switch>
+        <Route exact path='/' component={Login} />
+        <Route exact path='/videogames' component={Home} />
+        <Route path='/videogames/create' component={CreateVideogame} />
+        <Route path='/videogames/:id' component={VideoGameDetail} />
+      </Switch>
     </div>
   );
 }

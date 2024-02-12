@@ -9,6 +9,7 @@
     background-image: url(../../img/fondo.png);
     background-size: 100%;
 }
+
 .login {
     height: 30rem;
     width: 30rem;
@@ -20,16 +21,19 @@
     border-radius: 10px;
     background-color: #212121;
 }
-.login > h1 {
+
+.login>h1 {
     display: flex;
     color: #FCF9BF;
     margin: 10px 10px;
     font-family: 'Times New Roman', Times, serif;
 }
-.login > p {
+
+.login>p {
     width: 50%;
     color: white;
 }
+
 .btn {
     /* display: inline-block;
     width: 4rem;
@@ -51,6 +55,7 @@
     border-radius: 12px;
     margin: 10px;
 }
+
 .btn::after {
     content: "";
     z-index: -1;
@@ -61,15 +66,14 @@
     left: 0;
     top: 0;
     border-radius: 10px;
-   }
-   /* glow */
-   .btn::before {
+}
+
+/* glow */
+.btn::before {
     content: "";
-    background: linear-gradient(
-       45deg,
-       #FF0000, #002BFF, #FF00C8, #002BFF,
-         #FF0000, #002BFF, #FF00C8, #002BFF
-   );
+    background: linear-gradient(45deg,
+            #FF0000, #002BFF, #FF00C8, #002BFF,
+            #FF0000, #002BFF, #FF00C8, #002BFF);
     position: absolute;
     top: -2px;
     left: -2px;
@@ -82,32 +86,32 @@
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
     opacity: 0;
-   }
-   
-   @keyframes glowing {
+}
+
+@keyframes glowing {
     0% {
-     background-position: 0 0;
+        background-position: 0 0;
     }
-   
+
     50% {
-     background-position: 400% 0;
+        background-position: 400% 0;
     }
-   
+
     100% {
-     background-position: 0 0;
+        background-position: 0 0;
     }
-   }
-   
-   /* hover */
-   .btn:hover::before {
+}
+
+/* hover */
+.btn:hover::before {
     opacity: 1;
-   }
-   
-   .btn:active:after {
+}
+
+.btn:active:after {
     background: transparent;
-   }
-   
-   .btn:active {
+}
+
+.btn:active {
     color: #000;
     font-weight: bold;
-   }
+}

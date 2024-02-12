@@ -7,17 +7,20 @@
     background-color: #121212;
 
 }
-.botonesDetails{
+
+.botonesDetails {
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-.divDescripcionBtn{
+
+.divDescripcionBtn {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
 }
+
 .divGeneralDetail .navDetail {
     height: 4rem;
     display: flex;
@@ -25,23 +28,26 @@
     background-color: #212121;
 
 }
-.divGeneralDetail .navDetail > button{
-   height: 2.5rem;
-   width: 5rem;
-   margin-left: 15px;
-   border-radius: 10px;
-   background-color: #212121;
-   color: #FCF9BF;
+
+.divGeneralDetail .navDetail>button {
+    height: 2.5rem;
+    width: 5rem;
+    margin-left: 15px;
+    border-radius: 10px;
+    background-color: #212121;
+    color: #FCF9BF;
     border: 1px solid #FCF9BF;
     letter-spacing: 2px;
-   ;
+    ;
 }
+
 .divGeneralDetail .title {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .divGeneralDetail .containerDetail {
     display: flex;
     flex-direction: column;
@@ -51,10 +57,11 @@
     align-items: center;
     color: #FCF9BF;
     margin-bottom: 3rem;
-    
+
 }
-.divGeneralDetail .containerDetail .details{
-    border: 1px solid  #FCF9BF;
+
+.divGeneralDetail .containerDetail .details {
+    border: 1px solid #FCF9BF;
     border-radius: 10px;
     display: flex;
     margin-left: 3rem;
@@ -63,25 +70,28 @@
     align-items: center;
 }
 
-.divGeneralDetail .containerDetail .details div{
+.divGeneralDetail .containerDetail .details div {
     margin-top: 3rem;
     margin-bottom: 3rem;
     margin-right: 1rem;
     margin-left: 1rem;
 }
-.divGeneralDetail .containerDetail .info{
+
+.divGeneralDetail .containerDetail .info {
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
+
 .fondo {
     display: flex;
     background-color: #707D9D;
     height: 30rem;
     width: 40rem;
 }
-.divGeneralDetail .navDetail > button:hover{
+
+.divGeneralDetail .navDetail>button:hover {
     background-color: #FCF9BF;
     border: 1px solid black;
     color: black;
@@ -103,6 +113,7 @@
     font-weight: bold;
     text-decoration: none;
 }
+
 .eliminar:hover {
     background-color: #FCF9BF;
     border: 1px solid #212121;
@@ -110,5 +121,3 @@
     text-decoration: none;
     cursor: pointer;
 }
-
-  

@@ -7,7 +7,7 @@ import Videogames from './components/Videogames';
 const Home = props => {
     const dispatch = useDispatch()
     useEffect(() => {
-            dispatch(getAllVideogamesDb())
+        dispatch(getAllVideogamesDb())
     }, [dispatch])
     return (
         <Videogames />

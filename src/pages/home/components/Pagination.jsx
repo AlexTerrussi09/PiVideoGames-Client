@@ -16,19 +16,17 @@ const Pagination = ({ totalPosts, postPerPage, setCurrentPage, currentPage }) =>
 		currentPage > 1 && setCurrentPage(currentPage - 1)
 	} 
   return (
-    <>
     <nav  className='navPagination'>
         <button onClick={prevPage} className="Prev">Prev</button>
           {
-          pages.map((page, index)=>{
+          pages.map((page)=>{
             return (
-              <button key={index} className={page === currentPage ? "paginationCurrent" : "normal"}  onClick={() => setCurrentPage(page)}>{page}</button>
+              <button key={page} className={page === currentPage ? "paginationCurrent" : "normal"}  onClick={() => setCurrentPage(page)}>{page}</button>
             )
           })
           }
           <button  onClick={nextPage}  className="Next" >Next</button>
     </nav>
-    </>
   )
 }
 export default Pagination
