@@ -37,7 +37,9 @@ const VideoGameDetail = (props) => {
   return (
     <>
       {Cargando ?
-        <LoadingComponent />
+        <div className='containerHome' style={{ height: "100vh", marginTop: 0, display: 'flex', justifyContent: "center", alignItems: "center" }}>
+          <LoadingComponent />
+        </div>
         :
         <div className='divGeneralDetail'>
           <div className='navDetail'>
@@ -65,10 +67,10 @@ const VideoGameDetail = (props) => {
               <div>{Videogame.releaseDate}</div>
               <div>
                 {
-                  isNaN(idVideogame)?
+                  isNaN(idVideogame) ?
                     <>
-                      <div> Generos: {Videogame.Generos?.map(g=> g.name).join(" , ")}</div>
-                      <div> Disponible para: {Videogame.Plataformas?.map(p=> p.name).join(" , ")}</div>
+                      <div> Generos: {Videogame.Generos?.map(g => g.name).join(" , ")}</div>
+                      <div> Disponible para: {Videogame.Plataformas?.map(p => p.name).join(" , ")}</div>
                     </>
                     :
                     <>

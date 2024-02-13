@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { postVideogameDb } from '../../redux/Actions';
+import { getAllVideogamesDb, postVideogameDb } from '../../redux/Actions';
 import SelectGenres from './components/SelectGenres';
 import SelectorPlataformas from './components/SelectorPlataformas';
 import './CreateVideogame.css'
@@ -64,6 +64,7 @@ const CreateVideogame = props => {
     setCargando(false)
   }
   const irAtras = () => {
+    dispatch(getAllVideogamesDb())
     history.push('/videogames')
   }
 
@@ -76,7 +77,9 @@ const CreateVideogame = props => {
       background_image: "https://www.publicdomainpictures.net/es/view-image.php?image=270609&picture=imagen-no-encontrada",
       rating: 1.0,
       genres: []
-    })
+    });
+    setGeneros([]);
+    setPlataformas([]);
   }
   const eliminarPlataforma = (p) => {
     setPlataformas(Plataformas.filter(pl => pl !== p))
