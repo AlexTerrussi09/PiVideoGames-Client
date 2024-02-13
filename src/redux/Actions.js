@@ -10,7 +10,7 @@ export const GET_ALL_PLATFORMS = "GET_ALL_PLATFORMS";
 export const UPDATE_VIDEOGAME = "UPDATE_VIDEOGAME";
 
 export const FILTER = "FILTER";
-const URL_SERVER = process.env.URL_SERVER || "http://localhost:3001/";
+const URL_SERVER = process.env.REACT_APP_URL_SERVER || "http://localhost:3001/";
 
 
 
