@@ -6,14 +6,18 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { getAllGenresApi } from './redux/Actions';
+import { getAllGenresApi, getAllPlatformsApi, getAllVideogamesDb } from './redux/Actions';
 
 function App() {
   const dispatch = useDispatch()
+
+
   useEffect(() => {
+    dispatch(getAllVideogamesDb())
     dispatch(getAllGenresApi())
+    dispatch(getAllPlatformsApi())
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [dispatch])
   return (
     <div className='App-header'>
       <Switch>

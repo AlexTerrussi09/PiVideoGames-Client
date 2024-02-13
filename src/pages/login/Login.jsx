@@ -1,12 +1,14 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import "./Login.css"
+import "./Login.css";
 
 const Login = props => {
   const history = useHistory();
+
   const irHome = () => {
     history.replace('/videogames')
   }
+
   return (
     <div className='container'>
       <div className='login'>

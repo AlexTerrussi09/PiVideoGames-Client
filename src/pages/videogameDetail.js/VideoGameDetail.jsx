@@ -64,8 +64,18 @@ const VideoGameDetail = (props) => {
             <div className='info'>
               <div>{Videogame.releaseDate}</div>
               <div>
-                {String(Number(Videogame.id)) !== 'NaN' ? <div> Generos: {Videogame.Generos?.join(" , ")}</div> : <div> Generos: {Videogame.Generos.map(p => p.name).join(" , ")}</div>}
-                {String(Number(Videogame.id)) !== 'NaN' ? <div> Disponible para: {Videogame.Plataformas?.join(" , ")}</div> : <div> Disponible para: {Videogame.Plataformas.map(p => p.name).join(" , ")}</div>}
+                {
+                  isNaN(idVideogame)?
+                    <>
+                      <div> Generos: {Videogame.Generos?.map(g=> g.name).join(" , ")}</div>
+                      <div> Disponible para: {Videogame.Plataformas?.map(p=> p.name).join(" , ")}</div>
+                    </>
+                    :
+                    <>
+                      <div> Generos: {Videogame.Generos?.join(" , ")}</div>
+                      <div> Disponible para: {Videogame.Plataformas?.join(" , ")}</div>
+                    </>
+                }
               </div>
             </div>
           </div>

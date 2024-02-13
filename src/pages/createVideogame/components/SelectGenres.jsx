@@ -23,9 +23,9 @@ const SelectGenres = ({ Gens, setGeneros }) => {
     return (
         <select className="select" onChange={handleGenres}>
             <option value={'All'}>Genre</option>
-            {Generos.map((g, index) => {
+            {Generos.map((g) => {
                 return (
-                    <option key={index} value={g.name}>{g.name}</option>
+                    <option key={g.id} value={g.name}>{g.name}</option>
                 )
             })}
         </select>

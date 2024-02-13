@@ -25,7 +25,7 @@ const Pagination = ({ totalPosts, postPerPage, setCurrentPage, currentPage }) =>
             )
           })
           }
-          <button  onClick={nextPage}  className="Next" >Next</button>
+          <button   onClick={nextPage}  className={`Next ${currentPage === pages.length ? 'disabled': 'Next'}`} >Next</button>
     </nav>
   )
 }

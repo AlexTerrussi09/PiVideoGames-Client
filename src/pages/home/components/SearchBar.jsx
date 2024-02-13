@@ -22,14 +22,13 @@ const SearchBar = ({ setCargando }) => {
     setBusqueda(e.target.value)
   }
   const Buscar = (e) => {
-    e.preventDefault()
     setCargando(true)
+    e.preventDefault()
     let buscar = dispatch(buscarJuegos(Busqueda))
     if (!buscar) {
       setCargando(false)
       return alert("no se encontro ningun juego con ese nombre")
     }
-    setCargando(false)
     return buscar
   }
   return (

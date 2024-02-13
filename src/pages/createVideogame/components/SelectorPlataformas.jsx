@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { getAllPlatformsApi } from '../../../redux/Actions';
-import './SelectorPlataformas.css'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import './SelectorPlataformas.css';
 
 const SelectorPlataformas = ({ setPlataformas, Plats }) => {
   const Plataformas = useSelector(state => state.platforms);
-  const dispatch = useDispatch()
 
   const handlePlatforms = (e) => {
     if (Plats.includes(e.target.value)) {
@@ -15,17 +13,13 @@ const SelectorPlataformas = ({ setPlataformas, Plats }) => {
     }
 
   }
-  useEffect(() => {
-    dispatch(getAllPlatformsApi())
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
 
   return (
     <select className="select" onChange={handlePlatforms}>
       <option value={'All'}>Platforms</option>
       {Plataformas.map((p, index) => {
         return (
-          <option key={index} value={p.name}>{p.name}</option>
+          <option key={p.id} value={p.name}>{p.name}</option>
         )
       })}
     </select>
