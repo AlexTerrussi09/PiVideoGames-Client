@@ -15,6 +15,7 @@ const URL_SERVER = process.env.URL_SERVER || "http://localhost:3001/";
 
 
 export const getAllVideogamesDb = () => {
+    console.log(process.env)
     return async dispatch => {
         const result = await fetch(`${URL_SERVER}videogames`, { method: 'GET', headers: { 'Content-Type': 'application/json' } })
         const data = await result.json()
