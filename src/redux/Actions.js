@@ -12,10 +12,7 @@ export const UPDATE_VIDEOGAME = "UPDATE_VIDEOGAME";
 export const FILTER = "FILTER";
 const URL_SERVER = process.env.REACT_APP_URL_SERVER_2 || "http://localhost:3001/";
 
-
-
 export const getAllVideogamesDb = () => {
-    console.log(process.env)
     return async dispatch => {
         const result = await fetch(`${URL_SERVER}videogames`, { method: 'GET', headers: { 'Content-Type': 'application/json' } })
         const data = await result.json()
